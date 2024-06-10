@@ -11,7 +11,7 @@ vim.opt.title = true
 
 -- vim.opt.titlestring = [[%f %h%m%r%w %{v:progname} (%{tabpagenr()} of %{tabpagenr('$')})]]
 
-vim.opt.titlestring = [[%t%(\ %M%)%((%{expand("%:~:.:h")})%)%(\ %a%)]]
+vim.opt.titlestring = [[ %t%( %M%) · %{substitute(getcwd(), '.*\/', '', '')} · Neovim ]]
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -33,7 +33,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
--- vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -63,7 +63,9 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- vim.opt.listchars = { tab = '»»', trail = '·', nbsp = '␣', eol = '↲'' , conceal = '*' }
+--
+vim.opt.listchars = { tab = '»-', multispace = '·', trail = '·', nbsp = '␣', eol = '↲' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
